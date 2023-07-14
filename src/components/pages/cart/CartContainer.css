@@ -1,0 +1,73 @@
+.containerCart{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+.clean{
+    position: absolute;
+    top: 138px;
+    left: 30px;
+}
+
+.empty{
+    color: #fff;
+    margin: 20px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: normal;
+    font-size: 30px;
+    font-style: italic;
+    border-top: #fff 1px solid;
+    border-bottom: #fff 1px solid;
+    padding: 5px 0 10px 0;
+    width: 80vw;
+}
+
+.delete button{
+    background-color:  rgba(255, 0 , 0, 0.3);
+    color: #fff;
+    margin-right: 3rem;
+    font-family: 'Nunito';
+    font-size: 20px;
+    border: rgba(184, 142, 142, 0.973) 1px solid;
+    transition: .2s;
+}
+
+.delete button:hover{
+    background-color: rgba(255, 0 , 0, 0.7);;
+}
+
+.cartCardContainer{
+    color: #fff;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(36, 36, 36, 0.5);
+    padding: 30px;
+    border: 1px solid #fff;
+    width: 70vw;
+}
+
+.cartCardContainer img{
+    width: 130px;
+    border-radius: 20px;
+}
+
+.infoCart{
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    padding: 0 40px 0 40px;
+    width: 550px;
+}
+
+.cartCardContainer h2, 
+.cartCardContainer h3, 
+.cartCardContainer p{
+    font-family: 'Bebas Neue';
+    font-size: 30px;
+    font-weight: normal;   
+}

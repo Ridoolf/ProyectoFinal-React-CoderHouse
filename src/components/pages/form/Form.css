@@ -1,0 +1,24 @@
+.formContainer{
+    background-color: rgba(240, 248, 255, 0.664);
+    padding: 20px;
+    width: 90vw;
+    margin: 2rem 1rem;
+    border-radius: 20px;
+    border: 1px solid #fff;
+}
+
+.formContainer h2{
+    font-family: 'Bebas Neue';
+    font-weight: normal;
+    font-size: 40px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+}
+
+.sendButton{
+    margin-top: 10px;
+}

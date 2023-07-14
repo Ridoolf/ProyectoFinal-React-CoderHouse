@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;700&display=swap");
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
+ul li{
+  list-style: none;
+}
+
+
+.navBarContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5rem;
+  align-items: center;
+  padding: 1em;
+}
+
+.navBarContainer img {
+  width: 88px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.navBarContainer img:hover {
+  transform: scale(1.1);
+}
+
+ul {
+  display: flex;
+  gap: 70px;
+}
+
+ul li,
+.about {
+  font-family: "Bebas Neue";
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+ul li,
+.about {
+  transition: 0.2s;
+}
+
+ul li:hover,
+.about:hover {
+  transform: scale(1.1);
+}
+
+.line {
+  border-top: 2px solid #fff;
+  opacity: 0.5;
+  height: 2px;
+  width: 90%;
+  padding: 0;
+  margin: 0 auto;
+}

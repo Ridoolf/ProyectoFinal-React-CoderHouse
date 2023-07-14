@@ -1,0 +1,26 @@
+.cartContainer {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+    user-select: none;
+    position: absolute;
+    top: 8.2em;
+    right: 3%;
+  }
+  
+  .cont {
+    background-color: #9b9494;
+    padding: 0.4em 0.8em;
+    border-radius: 155px;
+    font-size: small;
+    font-weight: bold;
+    font-family: "Nunito";
+    z-index: 100;
+    cursor: pointer;
+    border: #302e2e 4px solid;
+  }
+  
+  .cart {
+    margin: -1em 0.7em;
+  }
