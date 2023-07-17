@@ -57,13 +57,13 @@
 
 }
 
-span{
+.container span{
     font-size: 20px;
     border: 1px solid #fff;
     padding: 15px 30px;
 }
 
-button{
+.container button{
     padding: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 15px;
@@ -72,6 +72,6 @@ button{
     cursor: pointer;
 }
 
-button:hover{
+.container button:hover{
     background-color: #e6acd3;
 }

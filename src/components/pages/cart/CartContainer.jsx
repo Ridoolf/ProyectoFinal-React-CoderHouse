@@ -1,37 +1,38 @@
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
-import "./CartContainer.css";
+import Swal from "sweetalert2";
+import Cart from "./Cart";
 
 const CartContainer = () => {
-  const { cart, clearCart, removeById } = useContext(CartContext);
+  const { cart, clearCart, removeById, getTotalPrice } =
+    useContext(CartContext);
+
+  let total = getTotalPrice();
+
+  const clearCartAlert = () => {
+    Swal.fire({
+      title: "Are you sure you want to clear the cart?",
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: "Yes, clear",
+      denyButtonText: `No, cancel`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        clearCart();
+        Swal.fire("The cart was cleaned successfully", "", "success");
+      } else if (result.isDenied) {
+        Swal.fire("The cart remains unchanged", "", "info");
+      }
+    });
+  };
 
   return (
-    <>
-      <div className="containerCart">
-        <button onClick={clearCart} className="clean">
-          Clean
-        </button>
-        {cart.length === 0 ? (
-          <h4 className="empty">Empty</h4>
-        ) : (
-          cart.map((product) => {
-            return (
-              <div key={product.id} className="cartCardContainer">
-                <img src={product.img} alt="" />
-                <div className="infoCart">
-                  <h2>{product.title}</h2>
-                  <h3>${product.price}</h3>
-                  <p>amount: {product.quantity}</p>
-                </div>
-                <div className="delete">
-                  <button onClick={() => removeById(product.id)}>D</button>
-                </div>
-              </div>
-            );
-          })
-        )}
-      </div>
-    </>
+    <Cart
+      cart={cart}
+      removeById={removeById}
+      total={total}
+      clearCartAlert={clearCartAlert}
+    />
   );
 };
 

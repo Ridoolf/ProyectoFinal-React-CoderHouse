@@ -1,10 +1,10 @@
 import { BsFillCartCheckFill } from "react-icons/bs";
 import "./CartWidget.css";
 
-const CartWidget = () => {
+const CartWidget = ({ totalItems }) => {
   return (
     <div className="cartContainer">
-      <p className="cont">0</p>
+      <p className="cont">{totalItems}</p>
       <BsFillCartCheckFill
         className="cart"
         color="#fff"
