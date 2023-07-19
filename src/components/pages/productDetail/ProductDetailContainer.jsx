@@ -1,11 +1,13 @@
 import { useState, useEffect, useContext } from "react";
 import ProductDetail from "./ProductDetail";
-import { products } from "../../../productsMock";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import Swal from "sweetalert2";
+
+import { db } from "../../../firebaseConfig";
+import { collection, getDoc, doc } from "firebase/firestore";
 
 const ProductDetailContainer = () => {
   const [productSelected, setProductSelected] = useState({});
@@ -14,7 +16,7 @@ const ProductDetailContainer = () => {
 
   const { id } = useParams();
 
-  const productAmount = getTotalQuantity(+id);
+  const productAmount = getTotalQuantity(id);
 
   const onAdd = (amount) => {
     let data = {
@@ -35,16 +37,12 @@ const ProductDetailContainer = () => {
   };
 
   useEffect(() => {
-    let productFind = products.find((product) => product.id === +id);
-
-    const getProduct = new Promise((res) => {
-      setTimeout(() => {
-        res(productFind);
-      }, 2000);
-    });
-
-    getProduct
-      .then((res) => setProductSelected(res))
+    let itemCollection = collection(db, "products");
+    let refDoc = doc(itemCollection, id);
+    getDoc(refDoc)
+      .then((res) => {
+        setProductSelected({ ...res.data(), id: res.id });
+      })
       .catch((err) => console.log(err));
   }, [id]);
 

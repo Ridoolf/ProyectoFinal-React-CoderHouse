@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Cart.css";
 
 const Cart = ({ clearCartAlert, cart, removeById, total }) => {
@@ -23,15 +24,17 @@ const Cart = ({ clearCartAlert, cart, removeById, total }) => {
                   <div className="delete">
                     <button onClick={() => removeById(product.id)}>D</button>
                   </div>
-                  <div className="totalContainer">
-                    <h4>Total: ${total}</h4>
-                    <button>Finish</button>
-                  </div>
                 </div>
               </>
             );
           })
         )}
+        <div className="totalContainer">
+          <h4>Total: ${total}</h4>
+          <Link to="/checkout">
+            <button>Finish</button>
+          </Link>
+        </div>
       </div>
     </>
   );

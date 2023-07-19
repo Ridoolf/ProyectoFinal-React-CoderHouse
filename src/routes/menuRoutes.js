@@ -2,6 +2,7 @@ import ItemListContainer from "../components/pages/itemListContainer/ItemListCon
 import ProductDetailContainer from "../components/pages/productDetail/ProductDetailContainer"
 import CartContainer from "../components/pages/cart/CartContainer"
 import FormContainer from "../components/pages/form/FormContainer"
+import CheckoutContainer from "../components/pages/checkout/CheckoutContainer"
 
 export const menuRoutes = [
     {
@@ -28,5 +29,10 @@ export const menuRoutes = [
         id: "form", 
         path: "/form",
         Element: FormContainer,
+    },
+    {
+        id: "checkout",
+        path: "/checkout",
+        Element: CheckoutContainer,
     },
 ]

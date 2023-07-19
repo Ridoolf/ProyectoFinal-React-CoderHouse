@@ -1,30 +1,40 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import { products } from "../../../productsMock";
 import { useParams } from "react-router-dom";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import { db } from "../../../firebaseConfig";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const { categoryName } = useParams();
 
   useEffect(() => {
-    let productFilter = products.filter(
-      (product) => product.category === categoryName
-    );
+    let itemsCollection = collection(db, "products");
 
-    const tarea = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(categoryName ? productFilter : products);
-      }, 2000);
-    });
+    let queryNotQuery;
 
-    tarea
-      .then((products) => setItems(products))
-      .catch((rechazo) => console.log(rechazo));
+    if (!categoryName) {
+      queryNotQuery = itemsCollection;
+    } else {
+      queryNotQuery = query(
+        itemsCollection,
+        where("category", "==", categoryName)
+      );
+    }
+    getDocs(queryNotQuery)
+      .then((res) => {
+        let products = res.docs.map((element) => {
+          return {
+            ...element.data(),
+            id: element.id,
+          };
+        });
+        setItems(products);
+      })
+      .catch((err) => console.log(err));
   }, [categoryName]);
-
   return (
     <div>
       {items.length > 0 ? (
