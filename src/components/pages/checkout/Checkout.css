@@ -31,3 +31,17 @@
     color: #0edb5d;
     border-bottom: 1px solid #fff;
 }
+
+.returnToHome{
+    background-color: #fff;
+    padding: 20px;
+    position: absolute;
+    right: 45%;
+    left: 45%;
+    top: 230px;
+    border-radius: 20px;
+    font-family: 'Bebas Neue';
+    font-size: 18px;
+    font-weight: normal;
+    cursor: pointer;
+}
