@@ -32,8 +32,6 @@ const ProductDetailContainer = () => {
       showConfirmButton: false,
       timer: 1500,
     });
-
-    console.log(data);
   };
 
   useEffect(() => {
