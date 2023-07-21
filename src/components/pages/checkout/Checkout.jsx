@@ -4,9 +4,10 @@ import { TextField, Button } from "@mui/material";
 const Checkout = ({ handleSubmit, handleChange, errors }) => {
   return (
     <div className="checkoutContainer">
+      <h1 className="titleC">CheckOut</h1>
+      <p className="pleaseText">Please complete the following form with your information.</p>
       <form onSubmit={handleSubmit}>
         <TextField
-          margin="normal"
           color="secondary"
           label="Name"
           variant="outlined"
@@ -16,7 +17,6 @@ const Checkout = ({ handleSubmit, handleChange, errors }) => {
           error={errors.name ? true : false}
         />
         <TextField
-          margin="normal"
           color="secondary"
           label="Email"
           variant="outlined"
@@ -26,7 +26,6 @@ const Checkout = ({ handleSubmit, handleChange, errors }) => {
           error={errors.email ? true : false}
         />
         <TextField
-          margin="normal"
           color="secondary"
           label="Phone"
           variant="outlined"
@@ -35,7 +34,7 @@ const Checkout = ({ handleSubmit, handleChange, errors }) => {
           helperText={errors.phone}
           error={errors.phone ? true : false}
         />
-        <Button variant="outlined" type="submit">
+        <Button variant="outlined" type="submit" className="buttonMui">
           Buy
         </Button>
       </form>

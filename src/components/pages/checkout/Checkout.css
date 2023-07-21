@@ -1,4 +1,33 @@
 .checkoutContainer {
     background-color: #fff;
-    margin: 20px;
+    margin: 100px 10px ;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.titleC{
+    font-family: 'Bebas Neue';
+    font-weight: normal;
+}
+
+.pleaseText{
+    font-family: 'Nunito';
+    margin: 3px 0;
+}
+
+.endCheckout{
+    font-family: 'Bebas Neue';
+    text-align: center;
+    margin: 50px 10%;
+    color: #fff;
+    font-weight: normal;
+    font-size: 40px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 15px 0;
+}
+
+.endCheckout span{
+    color: #0edb5d;
+    border-bottom: 1px solid #fff;
 }

@@ -50,7 +50,7 @@ const CheckoutContainer = () => {
       <div>
         {orderId ? (
           <h1 className="endCheckout">
-            Su compra fue exitosa. Numero de Orden: {orderId}
+            Su compra fue exitosa. Numero de Orden: <span>{orderId}</span>
           </h1>
         ) : (
           <Checkout
