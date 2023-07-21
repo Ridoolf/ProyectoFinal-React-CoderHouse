@@ -1,33 +1,39 @@
 import "./Checkout.css";
 import { TextField, Button } from "@mui/material";
 
-const Checkout = ({ handleSubmit, handleChange }) => {
+const Checkout = ({ handleSubmit, handleChange, errors }) => {
   return (
-    <div>
+    <div className="checkoutContainer">
       <form onSubmit={handleSubmit}>
         <TextField
           margin="normal"
           color="secondary"
-          label="name"
-          variant="outlined"
-          name="phone"
-          onChange={handleChange}
-        />
-        <TextField
-          margin="normal"
-          color="secondary"
-          label="email"
+          label="Name"
           variant="outlined"
           name="name"
           onChange={handleChange}
+          helperText={errors.name}
+          error={errors.name ? true : false}
         />
         <TextField
           margin="normal"
           color="secondary"
-          label="phone"
+          label="Email"
+          variant="outlined"
+          name="email"
+          onChange={handleChange}
+          helperText={errors.email}
+          error={errors.email ? true : false}
+        />
+        <TextField
+          margin="normal"
+          color="secondary"
+          label="Phone"
           variant="outlined"
           name="phone"
           onChange={handleChange}
+          helperText={errors.phone}
+          error={errors.phone ? true : false}
         />
         <Button variant="outlined" type="submit">
           Buy

@@ -46,7 +46,7 @@ const CartContextProvider = ({ children }) => {
   const removeById = (id) => {
     let newArray = cart.filter((product) => product.id !== id);
     setCart(newArray);
-    localStorage.setItem(("Cart", JSON.stringify(newArray)));
+    localStorage.setItem("Cart", JSON.stringify(newArray));
   };
 
   const getTotalItems = () => {
