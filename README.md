@@ -2,7 +2,7 @@
 
 ![](https://res.cloudinary.com/dy3natzfk/image/upload/v1684853084/logo_mbelxq.png)
 
-[Preview](https://proyecto-final-react-coder-house.vercel.app/){:target="\_blank"}
+[Preview](https://proyecto-final-react-coder-house.vercel.app/)
 
 ¡Bienvenido a AstraShop!
 
