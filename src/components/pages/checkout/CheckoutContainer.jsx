@@ -29,6 +29,12 @@ const CheckoutContainer = () => {
 
       addDoc(ordersCollection, order).then((res) => setOrderId(res.id));
 
+      cart.map((product) => {
+        updateDoc(doc(db, "products", product.id), {
+          stock: product.stock - product.quantity,
+        });
+      });
+
       clearCart();
     },
     validateOnChange: false,
